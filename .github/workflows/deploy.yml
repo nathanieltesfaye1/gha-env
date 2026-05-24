@@ -11,8 +11,8 @@ jobs:
     environment: testing # specifies that, for the 'test' job, we'll be using the 'testing' environment
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.ihl8xeb.mongodb.net
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }} # Because we specified in line #11 (within the scope of the 'test' job) that the environment is 'testing', MONGODB_USERNAME will refer to the ENVIRONMENT variable for the TESTING environment specifically!!
-      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }} # Because we specified in line #11 (within the scope of the 'test' job) that the environment is 'testing', MONGODB_PASSWORD will refer to the ENVIRONMENT variable for the TESTING environment specifically!!
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }} # Because we specified in line #11 (within the scope of the 'test' job) that the environment is 'testing', MONGODB_USERNAME will refer to the ENVIRONMENT secrets for the TESTING environment specifically!!
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }} # Because we specified in line #11 (within the scope of the 'test' job) that the environment is 'testing', MONGODB_PASSWORD will refer to the ENVIRONMENT secrets for the TESTING environment specifically!!
       PORT: 8080
     # environment: testing 
     runs-on: ubuntu-latest
